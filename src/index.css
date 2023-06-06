@@ -2,14 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+.inputStyles {
+  @apply bg-orange-100 rounded-lg p-3 outline-transparent hover:outline-orange-600 focus:outline-orange-600 transition dark:bg-orange-800/[.5];
+}
+
+.btn {
+  @apply bg-orange-600 hover:bg-orange-700 py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-orange-800;
+}
+
+.btn:active {
+  @apply scale-95;
+}
+
 @layer components {
-  .tasksList > li:first-of-type button:last-of-type {
-    @apply bg-yellow-500 text-slate-100;
+  .tasksList > li:first-of-type article {
+    @apply bg-yellow-500 text-slate-100 dark:bg-orange-800;
   }
-  .tasksList > li:first-of-type button:last-of-type .description {
+  .tasksList > li:first-of-type article .description {
     @apply text-black;
   }
-  .tasksList > li:first-of-type button:last-of-type > div {
+  .tasksList > li:first-of-type article > div {
     @apply border-black;
+  }
+  .listView1 article {
+    @apply h-40;
+  }
+  .listView2 article {
+    @apply h-64;
+  }
+  .children-styles {
+    @apply text-slate-400;
+  }
+  .children-styles button {
+    @apply p-1;
+  }
+  .children-styles svg {
+    @apply w-6 h-6;
+  }
+  .stylesInputsField input,
+  .stylesInputsField textarea {
+    @apply inputStyles mt-1;
+  }
+  .stylesInputsField label {
+    @apply mb-4 text-slate-600;
   }
 }

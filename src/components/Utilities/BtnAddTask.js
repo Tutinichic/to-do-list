@@ -1,12 +1,20 @@
 import React from "react";
+import { useAppDispatch } from "../../store/hooks";
+import { modalActions } from "../../store/Modal.store";
 
 const BtnAddTask = ({ className }) => {
+  const dispatch = useAppDispatch();
+
+  const onOpenModal = () => {
+    dispatch(modalActions.openModalHandler());
+  };
+
   return (
-    <button
-      className={`bg-orange-500 hover:bg-orange-600 py-3 px-6 text-slate-50 rounded-lg w-auto transition ${className}`}
-    >
-      Add new task
-    </button>
+    React.createElement(React.Fragment, null,
+      React.createElement("button", { className: `btn ${className}`, onClick: onOpenModal },
+        "Add task"
+      )
+    )
   );
 };
 
